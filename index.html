@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src ="/style/js/jquery-3.4.1.min.js"></script><!-- jquery -->
+        <link rel="stylesheet" href="/style/css/semantic.css"><!--引入外部css-->
+        <title>訂料頁面</title>
+
+        <script>
+            function showNumber(article) { //不重新載入讀取資料庫
+                $.get("stock.php",{name: article},function(result){
+                    if(article == '齒輪')$("#gearNumber").html("剩餘數量: " + result);
+                    else if(article == '釘子')$("#nailNumber").html("剩餘數量: " + result);
+                    else if(article == '軸承')$("#bearingNumber").html("剩餘數量: " + result);
+                    else if(article == '電晶體')$("#transistorNumber").html("剩餘數量: " + result);
+                    else if(article == '彈簧')$("#springNumber").html("剩餘數量: " + result);
+                });   
+            }
+
+            $(function(){
+                setInterval(function(){
+                    var goods = ['齒輪','釘子','軸承','電晶體','彈簧'];
+                    for(var i=0;i<goods.length;i++){
+                        showNumber(goods[i]);
+                    }
+                },1500);
+            });
+        </script>
+        <style>
+            body{
+				background-color: #f2f2f2;
+                background-image: url("/style/image/train.png");
+                background-repeat: no-repeat;
+                background-attachment:fixed;
+                background-position:center;
+			}
+            .title{
+                text-align: center;
+                padding: 20px;
+            }
+            .content{
+                width:40%;
+            }
+            @media only screen and (max-width: 768px) {
+  				/* phones */
+                .title{
+                    font-size: 60%;
+                }
+  				.content{
+                    width:100%;
+                }
+			}
+        </style>
+    </head>
+
+    <body dir="ltr">
+        <div class="title">
+            <span style="color:yellowgreen; font-family:DFKai-sb; font-size: 350%; border-style: solid;">自動化運送列車系統</span>
+        </div>
+        <div  class="ui inverted content segment" style="margin:0px auto;">
+            <form  class="ui form" action="confirm.php" method="post" target="_blank" >
+                <div>
+                    <span class="ui big red ribbon label">選擇位置</span>
+                    <select name="id">
+                         <option value="1號廠">1號廠</option>
+                         <option value="2號廠">2號廠</option>
+                         <option value="3號廠">3號廠</option>
+                     </select>
+                     
+                     <div class="ui pointing red basic label">選擇送達位置 </div>
+                </div>
+
+                <div class="ui divider"></div><!--分隔線-->
+
+                <!-- 齒輪 -->
+                <div >
+                    <span class="ui small orange tag label"><img class="ui right spaced avatar image" src="/style/image/gear.jpg">齒輪</span>
+                    <div id="gearNumber" class="ui left pointing red basic label">載入中...</div>
+                    <input type="number" min="0" max="1000" name="num[]" value="0" placeholder='請填寫有效的數字，Ex:0~1000' required="required" />
+                </div>
+
+                <div class="ui divider"></div><!--分隔線-->
+
+                <!-- 釘子 -->
+                <div>
+                    <span class="ui small green tag label"><img class="ui right spaced avatar image" src="/style/image/nail.png">釘子</span>
+                    <div id="nailNumber" class="ui left pointing red basic label">載入中...</div>
+                    <input type="number" min="0" max="1000" name="num[]" value="0" placeholder='請填寫有效的數字，Ex:0~1000' required="required" />
+                </div>
+
+                <div class="ui divider"></div><!--分隔線-->
+
+                <!-- 軸承 -->
+                <div>
+                    <span class="ui small teal tag label"><img class="ui right spaced avatar image" src="/style/image/bearing.png">軸承</span>
+                    <div id="bearingNumber" class="ui left pointing red basic label">載入中...</div>
+                    <input type="number" min="0" max="1000" name="num[]" value="0" placeholder='請填寫有效的數字，Ex:0~1000' required="required" />
+                </div>
+
+                <div class="ui divider"></div><!--分隔線-->
+
+                <!-- 電晶體 -->
+                <div>
+                    <span class="ui small purple tag label"><img class="ui right spaced avatar image" src="/style/image/transistor.jpg">電晶體</span>
+                    <div id="transistorNumber" class="ui left pointing red basic label">載入中...</div>
+                    <input type="number" min="0" max="1000" name="num[]" value="0" placeholder='請填寫有效的數字，Ex:0~1000' required="required" />
+                </div>
+
+                <div class="ui divider"></div><!--分隔線-->
+
+                <!-- 彈簧 -->
+                <div>
+                    <span class="ui small brown tag label"><img class="ui right spaced avatar image" src="/style/image/spring.png">彈簧</span>
+                    <div id="springNumber" class="ui left pointing red basic label">載入中...</div>
+                    <input type="number" min="0" max="1000" name="num[]" value="0" placeholder='請填寫有效的數字，Ex:0~1000' required="required" />
+                </div>
+
+                <div class="ui divider"></div><!--分隔線-->
+
+                <!-- 提交按鈕 -->
+                <input class="ui primary button" type="submit" value="預覽訂單" required="required">
+                <input class="ui button" style="float:right;margin-left:10px;" type="button" value="查詢訂單狀態" onclick="location.href='viewOrder.php'">
+                <input class="ui button" style="float:right;margin-left:10px;" type="button" value="查詢列車位置" onclick="location.href='trainPath.html'">
+            </form>
+        </div>
+    </body>
+</html>
