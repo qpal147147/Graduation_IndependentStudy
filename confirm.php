@@ -33,7 +33,6 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="/style/css/milligram.css"><!--引入外部css-->
-		<link rel="stylesheet" href="/style/css/main.css"><!--引入外部css-->
         <title>預覽表單</title>
 		<style>
 			body{
