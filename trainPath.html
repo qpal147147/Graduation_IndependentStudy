@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src ="/style/js/jquery-3.4.1.min.js"></script><!-- jquery -->
+        <link rel="stylesheet" href="/style/css/semantic.css"><!--引入外部css-->
+        <title>查詢列車位置</title>
+        <style>
+            body{
+				background-color: #f2f2f2;
+			}
+            .RightTitle{
+				text-align:center;
+			}
+        </style>
+        <script>
+            //加載頁面完成後自動執行
+            $(function(){
+                setInterval(autoRefreshPosition,2000);//每秒自動更新
+            });
+            //ajax自動抓取資料
+            var record;
+
+            function autoRefreshPosition (){
+                $.get("position.php", function(result){
+                    if(result == 0){	//原點
+                        $('.pos').text("運送車目前在原點");
+                        $('.posSrc').attr("src",'/style/image/ZeroNum.gif');
+                    }
+                    else if(result == 1){	//1號點
+                        $('.pos').text("運送車目前在" + result + "號點");
+                        $('.posSrc').attr("src",'/style/image/OneNum.gif');
+                    }
+                    else if(result == 2){	//2號點
+                        $('.pos').text("運送車目前在" + result + "號點");
+                        $('.posSrc').attr("src",'/style/image/TwoNum.gif');
+                    }
+                    else if(result == 3){	//3號點
+                        $('.pos').text("運送車目前在" + result + "號點");
+                        $('.posSrc').attr("src",'/style/image/ThreeNum.gif');
+                    }
+                    else if(result == 4){	//出發時
+                        $('.pos').text("移動中...");
+                        $('.posSrc').attr("src",'/style/image/ZeroToOne.gif');
+                    }
+                    else if(result == 5){	//停留在1~2之間
+                        if(result - record == 1){	//若某點沒停駛，表現流暢動畫效果
+                            $('.posSrc').attr("src",'/style/image/OneNum.gif');
+                            setTimeout(function(){
+                                $('.posSrc').attr("src",'/style/image/OneToTwo.gif');
+                            },1000);
+                        }
+                        else{
+                            $('.pos').text("移動中...");
+                            $('.posSrc').attr("src",'/style/image/OneToTwo.gif');
+                        }
+                    }
+                    else if(result == 6){	//停留在2~3之間
+                        if(result - record == 1){	//若某點沒停駛，表現流暢動畫效果
+                            $('.posSrc').attr("src",'/style/image/TwoNum.gif');
+                            setTimeout(function(){
+                            $('.posSrc').attr("src",'/style/image/TwoToThree.gif');
+                            },1000);
+                        }
+                        else{
+                            $('.pos').text("移動中...");
+                            $('.posSrc').attr("src",'/style/image/TwoToThree.gif');
+                        }
+                    }
+                    else if(result == 7){	//停留在3~0之間
+                        if(result - record == 1){	//若某點沒停駛，表現流暢動畫效果
+                            $('.posSrc').attr("src",'/style/image/ThreeNum.gif');
+                            setTimeout(function(){
+                                $('.posSrc').attr("src",'/style/image/ThreeToZero.gif');
+                            },1000);
+                        }
+                        else{
+                            $('.pos').text("移動中...");
+                            $('.posSrc').attr("src",'/style/image/ThreeToZero.gif');
+                        }
+                    }
+
+                    record = result;	//紀錄上一點值，判斷是否過站
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <button class='ui primary button' onclick='history.back()'>回上頁</button>
+        <div class='RightTitle'>
+            <h1 class="pos">讀取中...</h1>
+            <img class="posSrc" src="/style/image/train.png" alt="Train Position Now" width="50%" height="50%">
+        </div>
+    </body>
+</html>
