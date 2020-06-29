@@ -50,9 +50,9 @@
 |**loginHistory.php** |  歷史資料查詢網站之登入介面                      |
 | **history.php**     | 顯示所有過往「已處理」之訂單                     |
 |**8052.a51**         |  為8052單晶片進行所有處理與發送訊號的程式碼       |
-|**style**            |  存放所有素材，CSS、JS、IMG。                   |
+|**style**            |  存放所有素材，CSS、JS、IMG                     |
 
-## 文件架構圖<br>
+## 文件關係圖<br>
 ![Organization Chart](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/Organization%20Chart.jpg)
 
 ## 整體流程<br>
