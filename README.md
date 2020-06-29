@@ -49,7 +49,9 @@
 |**8052.a51**         |  為8052單晶片進行所有處理與發送訊號的程式碼       |
 |**style**            |  存放所有素材，CSS、JS、IMG。                   |
 
-## 文件關係圖<br>
+## 文件架構圖<br>
+![Organization Chart](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/Organization%20Chart.jpg)
+
 ## 整體流程<br>
 1. 使用者透過網頁進行定料。
 2. 管理員透過管控介面查看訂單。
@@ -60,3 +62,19 @@
 7. 已處理完畢訂單會備份至資料庫，透過查詢介面可查看。並可選擇任意時間區間或年月份進行整體查詢。
 
 ## 軟體作品圖<br>
+* 使用者介面
+![User interface](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/index.jpg)
+* 再次確認訂單
+![Confirm form](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/confirm.jpg)
+* 查看當前列車位置
+![Train path now](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/TrainPath.jpg)
+* 查看目前所有訂單
+![View order](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/viewOrder.jpg)
+* 管理員登入介面
+![Login manager interface](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/loginManager.jpg)
+* 管理員介面
+![Manager interface](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/manager.jpg)
+* 歷史資料查詢登入介面
+![Login history interface](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/loginHistory.jpg)
+* 歷史資料查詢系統
+![history system](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/history.jpg)
