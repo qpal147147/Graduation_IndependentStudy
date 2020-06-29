@@ -9,6 +9,9 @@
 * **DataBase**：MySQL
 
 ## 使用套件<br>
+1. [Milligram](https://milligram.io/)：CSS樣式
+2. [Semantic UI](https://semantic-ui.com/)：CSS樣式
+3. [Echarts](https://echarts.apache.org/zh/index.html)：視覺化圖表呈現
 
 ## 作品摘要<br>
 本作品透過 WEB 網頁端進行各項控制，並將資訊傳至運送車上的微電腦來進行運送流程。網頁端主要分成客戶訂料介面、管理員控管介面及資料庫查詢介面，使用者透過訂料介面選取送達位置及所需物料並預覽檢查訂單，完成後將訂單資訊送達至管控介面。管理員在接收到訂單後，可隨時依狀況進行訂單上的修正(刪除、更改)，並將資訊透過 WIFI 傳達至列車上的微電腦進行判斷與控制。<br><br>
