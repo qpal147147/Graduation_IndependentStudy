@@ -53,7 +53,7 @@
 |**style**            |  存放所有素材，CSS、JS、IMG                     |
 
 ## 文件關係圖<br>
-![Organization Chart](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/Organization%20Chart.jpg)
+![Organization Chart](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/OrganizationChart.jpg)
 
 ## 整體流程<br>
 1. 使用者透過網頁進行定料。
@@ -63,6 +63,7 @@
 5. 列車每經過一個點位光感測器會偵測並回傳至8052，並推斷出當前位置，且同步顯示於網頁上。若當前位置符合訂單位置則停止行駛，並啟動蜂鳴器。
 6. 當列車回至起始位置後，管理員將狀態更改為已處理並刪除。
 7. 已處理完畢訂單會備份至資料庫，透過查詢介面可查看。並可選擇任意時間區間或年月份進行整體查詢。
+![Organization Chart](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/flowchart.jpg)
 
 ## 軟體作品圖<br>
 * 使用者介面
