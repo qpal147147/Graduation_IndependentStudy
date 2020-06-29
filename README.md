@@ -2,10 +2,16 @@
 作品名稱為：***遠端智慧型運送列車***<br>
 為IOT物聯網的作品。<br>
 由4人團隊所創作。<hr>
+
 ## 使用語言<br>
 * **前端**：HTML、CSS、JavaScript、JQuery
 * **後端**：PHP
 * **DataBase**：MySQL
+
+## 使用套件<br>
+1. [Milligram](https://milligram.io/)：CSS樣式
+2. [Semantic UI](https://semantic-ui.com/)：CSS樣式
+3. [Echarts](https://echarts.apache.org/zh/index.html)：視覺化圖表呈現
 
 ## 作品摘要<br>
 本作品透過 WEB 網頁端進行各項控制，並將資訊傳至運送車上的微電腦來進行運送流程。網頁端主要分成客戶訂料介面、管理員控管介面及資料庫查詢介面，使用者透過訂料介面選取送達位置及所需物料並預覽檢查訂單，完成後將訂單資訊送達至管控介面。管理員在接收到訂單後，可隨時依狀況進行訂單上的修正(刪除、更改)，並將資訊透過 WIFI 傳達至列車上的微電腦進行判斷與控制。<br><br>
@@ -35,18 +41,20 @@
 |**stock.php**        |  顯示物料剩餘數量                               |
 |**confirm.php**      | 再次確認使用者所選物料之介面                     |
 |**Session.php**      | 將所選物料存入資料庫裡                           |
-|**viewOrder.php**    | 使用者檢視所有訂單之介面                         |
+|**viewOrder.php**    | 使用者可檢視所有訂單之介面                       |
+|**trainPath.html**   |  使用者可檢視列車目前所在位置之介面               |
 |**loginManager.php** |  管理員管控網站之登入介面                        |
 |**Manager.php**      | 管理員管控介面，負責處理所有訂單並隨時根據狀況修改 |
 |**position.php**     |  負責讀取txt檔案內資料並顯示                     |
 |**position.txt**     |  接收ESP8266所傳回的資訊                        |
-|**trainPath.html**   |  將當前位置轉換成GIF圖                          |
 |**loginHistory.php** |  歷史資料查詢網站之登入介面                      |
 | **history.php**     | 顯示所有過往「已處理」之訂單                     |
 |**8052.a51**         |  為8052單晶片進行所有處理與發送訊號的程式碼       |
 |**style**            |  存放所有素材，CSS、JS、IMG。                   |
 
-## 文件關係圖<br>
+## 文件架構圖<br>
+![Organization Chart](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/Organization%20Chart.jpg)
+
 ## 整體流程<br>
 1. 使用者透過網頁進行定料。
 2. 管理員透過管控介面查看訂單。
@@ -57,3 +65,19 @@
 7. 已處理完畢訂單會備份至資料庫，透過查詢介面可查看。並可選擇任意時間區間或年月份進行整體查詢。
 
 ## 軟體作品圖<br>
+* 使用者介面
+![User interface](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/index.jpg)
+* 再次確認訂單
+![Confirm form](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/confirm.jpg)
+* 查看當前列車位置
+![Train path now](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/TrainPath.jpg)
+* 查看目前所有訂單
+![View order](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/viewOrder.jpg)
+* 管理員登入介面
+![Login manager interface](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/loginManager.jpg)
+* 管理員介面
+![Manager interface](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/manager.jpg)
+* 歷史資料查詢登入介面
+![Login history interface](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/loginHistory.jpg)
+* 歷史資料查詢系統
+![history system](https://raw.githubusercontent.com/qpal147147/UniversityGraduationPaper_IOT/master/sampleImage/history.jpg)
